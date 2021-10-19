@@ -1,2 +1,0 @@
-# AuctionApp
-ABH Internship Project
