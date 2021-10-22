@@ -1,4 +1,5 @@
 package com.abh.auctionapp.model.enums;
 
-public class Gender {
+public enum Gender {
+    FEMALE, MALE, OTHER
 }

@@ -1,4 +1,5 @@
 package com.abh.auctionapp.model.enums;
 
-public class Size {
+public enum Size {
+    SMALL, MEDIUM, LARGE, EXTRA_LARGE
 }
