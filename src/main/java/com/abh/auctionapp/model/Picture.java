@@ -14,14 +14,14 @@ public class Picture {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long PictureId;
+    private Long id;
 
     @NotBlank
     @Column(nullable = false)
     private String url;
 
     @ManyToOne
-    @JoinColumn(name = "productId", nullable = false)
+    @JoinColumn(name = "product_id", nullable = false)
     private Product product;
 
     public Picture() {
@@ -32,12 +32,12 @@ public class Picture {
         this.product = product;
     }
 
-    public Long getPictureId() {
-        return PictureId;
+    public Long getId() {
+        return id;
     }
 
-    public void setPictureId(Long PictureId) {
-        this.PictureId = PictureId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUrl() {

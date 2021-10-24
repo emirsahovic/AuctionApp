@@ -12,14 +12,14 @@ public class Wishlist {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long WishlistId;
+    private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "personId", nullable = false)
+    @JoinColumn(name = "person_id", nullable = false)
     private Person person;
 
     @ManyToOne
-    @JoinColumn(name = "productId", nullable = false)
+    @JoinColumn(name = "product_id", nullable = false)
     private Product product;
 
     public Wishlist() {
@@ -30,12 +30,12 @@ public class Wishlist {
         this.product = product;
     }
 
-    public Long getWishlistId() {
-        return WishlistId;
+    public Long getId() {
+        return id;
     }
 
-    public void setId(Long WishlistId) {
-        this.WishlistId = WishlistId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Person getPerson() {

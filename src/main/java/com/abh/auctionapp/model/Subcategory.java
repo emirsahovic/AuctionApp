@@ -15,7 +15,7 @@ public class Subcategory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long SubcategoryId;
+    private Long id;
 
     @NotBlank
     @Column(nullable = false)
@@ -23,7 +23,7 @@ public class Subcategory {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "categoryId", nullable = false)
+    @JoinColumn(name = "category_id", nullable = false)
     private Category category;
 
     public Subcategory() {}
@@ -33,12 +33,12 @@ public class Subcategory {
         this.category = category;
     }
 
-    public Long getSubcategoryId() {
-        return SubcategoryId;
+    public Long getId() {
+        return id;
     }
 
-    public void setSubcategoryId(Long SubcategoryId) {
-        this.SubcategoryId = SubcategoryId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {

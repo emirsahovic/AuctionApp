@@ -19,7 +19,7 @@ public class Card {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long CardId;
+    private Long id;
 
     @NotBlank
     @Column(nullable = false)
@@ -45,7 +45,7 @@ public class Card {
     private Integer cvc;
 
     @ManyToOne
-    @JoinColumn(name = "personId", nullable = false)
+    @JoinColumn(name = "person_id", nullable = false)
     private Person person;
 
     public Card() {
@@ -63,11 +63,11 @@ public class Card {
     }
 
     public Long getId() {
-        return CardId;
+        return id;
     }
 
-    public void setId(Long CardId) {
-        this.CardId = CardId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getCardName() {

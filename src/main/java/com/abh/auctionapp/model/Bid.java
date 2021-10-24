@@ -15,7 +15,7 @@ public class Bid {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long BidId;
+    private Long id;
 
     @PositiveOrZero
     @Column(nullable = false)
@@ -25,11 +25,11 @@ public class Bid {
     private LocalDateTime bidDate;
 
     @ManyToOne
-    @JoinColumn(name = "personId", nullable = false)
+    @JoinColumn(name = "person_id", nullable = false)
     private Person person;
 
     @ManyToOne
-    @JoinColumn(name = "productId", nullable = false)
+    @JoinColumn(name = "product_id", nullable = false)
     private Product product;
 
     public Bid() {
@@ -42,12 +42,12 @@ public class Bid {
         this.product = product;
     }
 
-    public Long getBidId() {
-        return BidId;
+    public Long getId() {
+        return id;
     }
 
-    public void setBidId(Long BidId) {
-        this.BidId = BidId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Float getPrice() {

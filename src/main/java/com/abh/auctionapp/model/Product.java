@@ -20,7 +20,7 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long ProductId;
+    private Long id;
 
     @NotBlank
     @javax.validation.constraints.Size(max = 50)
@@ -63,11 +63,11 @@ public class Product {
     private String phoneNumber;
 
     @ManyToOne
-    @JoinColumn(name = "personId", nullable = false)
+    @JoinColumn(name = "person_id", nullable = false)
     private Person person;
 
     @ManyToOne
-    @JoinColumn(name = "subcategoryId", nullable = false)
+    @JoinColumn(name = "subcategory_id", nullable = false)
     private Subcategory subcategory;
 
     public Product() {
@@ -84,13 +84,11 @@ public class Product {
         this.subcategory = subcategory;
     }
 
-    public Long getProductId() {
-        return ProductId;
+    public Long getId() {
+        return id;
     }
 
-    public void setProductId(Long ProductId) {
-        this.ProductId = ProductId;
-    }
+    public void setId(Long id) { this.id = id; }
 
     public String getName() {
         return name;

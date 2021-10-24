@@ -15,7 +15,7 @@ public class Notification {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long NotificationId;
+    private Long id;
 
     @NotBlank
     @Column(nullable = false)
@@ -25,11 +25,11 @@ public class Notification {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "personId", nullable = false)
+    @JoinColumn(name = "person_id", nullable = false)
     private Person person;
 
     @ManyToOne
-    @JoinColumn(name = "productId", nullable = false)
+    @JoinColumn(name = "product_id", nullable = false)
     private Product product;
 
     public Notification() {
@@ -41,12 +41,12 @@ public class Notification {
         this.product = product;
     }
 
-    public Long getNotificationId() {
-        return NotificationId;
+    public Long getId() {
+        return id;
     }
 
-    public void setNotificationId(Long NotificationId) {
-        this.NotificationId = NotificationId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitle() {

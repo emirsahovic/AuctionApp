@@ -17,7 +17,7 @@ public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long PersonId;
+    private Long id;
 
     @NotBlank
     @Column(nullable = false)
@@ -67,12 +67,12 @@ public class Person {
         this.password = password;
     }
 
-    public Long getPersonId() {
-        return PersonId;
+    public Long getId() {
+        return id;
     }
 
-    public void setPersonId(Long PersonId) {
-        this.PersonId = PersonId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getFirstName() {
