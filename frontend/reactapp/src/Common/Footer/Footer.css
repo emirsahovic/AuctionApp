@@ -4,58 +4,65 @@
     overflow-x: hidden;
 }
 
-.footer-cont{
+.footer-cont {
     width: 100%;
     height: 290px;
     background: #252525;
     border: 1px solid #979797;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: space-between;
+    grid-template-columns: repeat(2, 1fr);
     padding-top: 35px;
     font-family: 'Lato', sans-serif;
     font-size: 16px;
     line-height: 30px;
 }
 
-.page-info{
-    justify-self:center;
+.page-info {
+    justify-self:end;
     color: #d8d8d8;
     height: 100%;
-    margin-left: 100px;
+    margin-right: 60px;
 }
 
 .contact-info {
-    justify-self: center;
+    justify-self: start;
     color: #d8d8d8;
     height: 100%;
-    margin-right: 100px;
+    margin-left: 40px;
 }
 
-.newsletter {
-    margin-right: 200px;
-    color: #d8d8d8;
-    height: 100%;
-}
-
-.footer-cont h3{
+.footer-cont h3 {
     opacity: 0.5;
     color: #fff;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
 
-.footer-cont a{
+.footer-cont a {
     color: #fff;
     letter-spacing: 1px;
 }
 
-.contact-info .social-icons img{ 
+.contact-info .social-icons img {
     margin-right: 13px;
     margin-top: 8px;
   }
 
-.newsletter input {
+a {
+    text-decoration: none;
+  }
+
+  .page-info a:hover {
+    opacity: 0.85;
+  }
+
+/*.newsletter {
+    margin-right: 200px;
+    color: #d8d8d8;
+    height: 100%;
+}*/
+
+/*.newsletter input {
     background: #3B3B3B;
     font-size: 16px;
     letter-spacing: 0.56px;
@@ -76,7 +83,7 @@
       font-size: 14px;
   }
 
-.newsletter button{
+.newsletter button {
     background-color: transparent;
     border: 3px solid #8367D8;
     font-weight: bold;
@@ -93,53 +100,45 @@
     cursor: pointer;
 }
 
-.emailField{
+.emailField {
     margin-top: 10px;
-}
-
-a {
-    text-decoration: none;
-}
-
-.page-info a:hover {
-    opacity: 0.85;
-}
+}*/
 
 @media(max-width: 767px) {
     .footer-cont {
         grid-template-columns: 1fr;
         padding-top: 30px;
-        height: 600px;
+        height: 400px;
         text-align: center;
     }
 
-    .page-info{
+    .page-info {
         justify-self:center;
-        margin-left: 0px;
+        margin-right: 0px;
         border-bottom: 1px dotted gray;
     }
     
     .contact-info {
         justify-self: center;
-        margin-right: 0px;
+        margin-left: 0px;
         border-bottom: 1px dotted gray;
     }
     
-    .newsletter {
+    /*.newsletter {
         margin-right: 0px;
-    }
+    }*/
 }
 
 @media(min-width: 768px) and (max-width: 1024px) {
     .footer-cont {
         grid-template-columns: repeat(2, 1fr);
-        padding-top: 30px;
-        height: 400px;
+        padding-top: 20px;
+        height: 250px;
         text-align: center;
     }
 
-    .newsletter {
+    /*.newsletter {
         justify-self:end;
         margin-right: -170px;
-    }
+    }*/
 }

@@ -31,7 +31,7 @@ function Footer() {
                 </div>
             </div>
 
-            <div className="newsletter">
+            {/*<div className="newsletter">
                 <h3>Newsletter</h3>
                 <a>Enter your email address and get notified <br /> about new products. We hate spam!</a>
                 <div className="emailField">
@@ -40,7 +40,7 @@ function Footer() {
                         Go <span style={{ color: '#8367d8', marginLeft: '8px' }}>&gt;</span>
                     </button>
                 </div>
-            </div>
+            </div>*/}
 
         </div>
     );
