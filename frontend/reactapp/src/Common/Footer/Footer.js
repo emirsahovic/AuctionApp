@@ -10,11 +10,11 @@ function Footer() {
         <div className="footer-cont">
             <div className="page-info">
                 <h3>Auction</h3>
-                <Link to="/about">About us</Link>
+                <Link to="/shop/about">About us</Link>
                 <br />
-                <Link to="/terms">Terms and Conditions</Link>
+                <Link to="/shop/terms">Terms and Conditions</Link>
                 <br />
-                <Link to="/privacy">Privacy and Policy</Link>
+                <Link to="/shop/privacy">Privacy and Policy</Link>
             </div>
 
             <div className="contact-info">
@@ -24,7 +24,7 @@ function Footer() {
                 <a>support@auction.com</a>
                 <br />
                 <div className="social-icons">
-                   <a href="https://www.facebook.com" rel="noreferrer" target="_blank"><img src={facebook} alt="facebook"></img></a>
+                    <a href="https://www.facebook.com" rel="noreferrer" target="_blank"><img src={facebook} alt="facebook"></img></a>
                     <a href="https://www.instagram.com" rel="noreferrer" target="_blank"><img src={instagram} alt="instagram"></img></a>
                     <a href="https://www.twitter.com" rel="noreferrer" target="_blank"><img src={twitter} alt="twitter"></img></a>
                     <a href="https://www.google.com" rel="noreferrer" target="_blank"><img src={google} alt="google plus"></img></a>
