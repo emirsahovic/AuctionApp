@@ -1,14 +1,14 @@
-import {Route, Switch} from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import About from "../Pages/About/About";
 import TermsConditions from "../Pages/TermsConditions/TermsConditions";
 import PrivacyPolicy from "../Pages/PrivacyPolicy/PrivacyPolicy";
 
-function Routes(){
+function Routes() {
     return (
         <Switch>
-            <Route path="/about" component={About}/>
-            <Route path="/privacy" component={PrivacyPolicy}/>
-            <Route path="/terms" component={TermsConditions}/>
+            <Route path="/shop/about" component={About} exact />
+            <Route path="/shop/privacy" component={PrivacyPolicy} />
+            <Route path="/shop/terms" component={TermsConditions} />
         </Switch>
     );
 }
