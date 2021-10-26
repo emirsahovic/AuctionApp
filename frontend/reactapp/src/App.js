@@ -1,16 +1,18 @@
 import NavBar from './Common/Header/NavBar';
 import Footer from './Common/Footer/Footer'
 import Routes from './Routes/Routes'
-import {BrowserRouter as Router} from 'react-router-dom';
+import Breadcrumb from './Common/Breadcrumb/Breadcrumb'
+import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
     <div>
-    <Router>
-       <NavBar />
-       <Routes />
-       <Footer />
-    </Router>
+      <Router>
+        <NavBar />
+        <Breadcrumb />
+        <Routes />
+        <Footer />
+      </Router>
     </div>
   );
 }
