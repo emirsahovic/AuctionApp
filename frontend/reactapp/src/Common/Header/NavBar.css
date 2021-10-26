@@ -98,7 +98,17 @@
   margin-right: 65px;
 }
 
-.container-main-nav a {
+.selected {
+  color: #8367d8;
+  font-weight: bold;
+  padding-right: 30px;
+  text-decoration: none;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.container-main-nav a:not(.selected) {
   padding-right: 30px;
   text-decoration: none;
   font-family: "Lato", sans-serif;
@@ -107,10 +117,11 @@
   color: #252525;
 }
 
-.container-main-nav a:hover {
+.container-main-nav a:not(.selected):hover {
   opacity: 0.7;
   color: #8367d8;
 }
+
 
 /* --------------------------- Responsive design --------------------------------- */
 
