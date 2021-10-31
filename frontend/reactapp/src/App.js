@@ -1,8 +1,10 @@
-import NavBar from './Common/Header/NavBar';
-import Footer from './Common/Footer/Footer'
-import Routes from './Routes/Routes'
-import Breadcrumb from './Common/Breadcrumb/Breadcrumb'
+import NavBar from './common/Header/index';
+import Footer from './common/Footer/index'
+import Routes from './routes/index'
+import Breadcrumb from './common/Breadcrumb/index'
 import { BrowserRouter as Router } from 'react-router-dom';
+
+import './App.css';
 
 function App() {
   return (
@@ -12,8 +14,8 @@ function App() {
         <Breadcrumb />
         <Routes />
         <Footer />
-      </Router>
-    </div>
+      </Router >
+    </div >
   );
 }
 
