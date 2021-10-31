@@ -1,14 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap');
-
 * {
     font-family: 'Lato', sans-serif;
 }
 
 .about-wrapper {
-    max-width: 1320px;
+    max-width: 75%;
     margin: auto;
     margin-top: 25px;
-    margin-bottom: 80px;
+    margin-bottom: 100px;
 }
 
 h1 {
