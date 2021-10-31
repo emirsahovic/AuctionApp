@@ -1,0 +1,11 @@
+.breadcrumb-cont {
+    max-width: 75%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.hidden span {
+    display: none;
+}

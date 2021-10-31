@@ -1,0 +1,162 @@
+* {
+    overflow-x: hidden;
+}
+
+.footer-cont {
+    width: 100%;
+    height: 290px;
+    background: #252525;
+    border: 1px solid #979797;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: 35px;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    line-height: 30px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    padding-left: 14%; /* Dodano zbog estetike - Odkomentarisati kada se doda newsletter */
+}
+
+.info {
+    color: #fff;
+}
+
+.page-info {
+    justify-self:end;
+    color: #d8d8d8;
+    height: 100%;
+    margin-right: 60px;
+}
+
+.contact-info {
+    justify-self: center;
+    color: #d8d8d8;
+    height: 100%;
+}
+
+.footer-cont h3 {
+    opacity: 0.5;
+    color: #fff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.footer-cont a {
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.contact-info .social-icons {
+    margin-top: 5px;
+}
+
+.contact-info .social-icons a {
+    margin-right: 13px;
+    margin-top: 8px;
+}
+
+.contact-info .social-icons a:hover {
+    opacity: 0.85;
+}
+
+a {
+    text-decoration: none;
+}
+
+  .page-info a:hover {
+    opacity: 0.85;
+}
+
+.newsletter {
+    display: none;
+    color: #d8d8d8;
+}
+
+.newsletter input {
+    background: #3B3B3B;
+    font-size: 16px;
+    letter-spacing: 0.56px;
+    width: 220px;
+    height: 45px;
+    margin-right: 18px;
+    border: none;
+    text-indent: 10px;
+    color: #fff;
+}
+
+.newsletter input[type=text]:focus {
+    outline: none;
+}
+
+.footer-cont ::placeholder {
+    color: #d8d8d8;
+    font-size: 14px;
+}
+
+.newsletter button {
+    background-color: transparent;
+    border: 3px solid #8367D8;
+    font-weight: bold;
+    font-size: 18px;
+    color: #D8D8D8;
+    letter-spacing: 0.63px;
+    text-transform: uppercase;
+    width: 105px;
+    height: 40px;
+} 
+
+.newsletter button:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+.emailField {
+    margin-top: 10px;
+}
+
+@media(max-width: 767px) {
+    .footer-cont {
+        grid-template-columns: 1fr;
+        padding-top: 30px;
+        height: 600px;
+        text-align: center;
+        padding-left: 0px;
+    }
+
+    .page-info {
+        justify-self:center;
+        margin-right: 0px;
+        border-bottom: 1px dotted gray;
+    }
+    
+    .contact-info {
+        justify-self: center;
+        border-bottom: 1px dotted gray;
+    }
+    
+    .newsletter {
+        margin-right: 0px;
+    }
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
+    .footer-cont {
+        grid-template-columns: repeat(2, 1fr);
+        padding-top: 20px;
+        height: 400px;
+        text-align: center;
+    }
+
+    .contact-info {
+        margin-right: 50px;
+    }
+
+    .newsletter {
+        justify-self:center;
+        margin-right: -430px;
+    }
+}
