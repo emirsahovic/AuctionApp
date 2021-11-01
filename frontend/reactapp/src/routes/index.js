@@ -6,9 +6,9 @@ import PrivacyPolicy from "../pages/PrivacyPolicy/index";
 function Routes() {
     return (
         <Switch>
-            <Route path="/shop/about" component={About} />
-            <Route path="/shop/privacy" component={PrivacyPolicy} />
-            <Route path="/shop/terms" component={TermsConditions} />
+            <Route exact path="/shop/about" component={About} />
+            <Route exact path="/shop/privacy" component={PrivacyPolicy} />
+            <Route exact path="/shop/terms" component={TermsConditions} />
         </Switch>
     );
 }
