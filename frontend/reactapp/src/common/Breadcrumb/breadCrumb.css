@@ -3,15 +3,17 @@
     margin: auto;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
     font-family: 'Lato', sans-serif;
     margin-top: 20px;
-    padding: 5px 0px;
+    padding: 0.3rem 0;
+    background-color: #fcfcfc;
 }
 
 h5 {
-   font-size: 20px;
-   color: #9B9B9B;
+   font-size: 18px;
+   color: #000;
+   margin-bottom: 0;
 }
 
 .breadcrumb-link {
@@ -26,7 +28,7 @@ h5 {
 }
 
 span {
-    color: #9B9B9B;
+    color: #8367d8;
     font-weight: bold;
     font-size: 18px;  
 }

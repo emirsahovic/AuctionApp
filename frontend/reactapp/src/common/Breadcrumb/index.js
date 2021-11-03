@@ -34,7 +34,7 @@ const Breadcrumbs = () => {
                 (<><NavLink to={match.url.slice(0, match.url.lastIndexOf("/"))} className="breadcrumb-link">
                   {match.url.slice(1, match.url.lastIndexOf("/")).charAt(0).toUpperCase() + match.url.slice(1, match.url.lastIndexOf("/")).slice(1)}
                 </NavLink>
-                  <span style={{ fontSize: "20px" }}> &#8594;
+                  <span style={{ fontSize: "20px", color: "#9b9b9b" }}> &#8594;
                     <span> {breadcrumb} </span>
                   </span></>) : null}
             </span>
