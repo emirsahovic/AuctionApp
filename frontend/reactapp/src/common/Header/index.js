@@ -36,7 +36,7 @@ function NavBar() {
       </div>
 
       <div className="container-main-nav">
-        <Link to="/"><img src={logo} alt="logo"></img></Link>
+        <Link to="/" className="logo-link"><img src={logo} alt="logo"></img></Link>
         <input type="text" placeholder="Try enter: Shoes"></input>
         <ul>
           <li><NavLink to="/" exact activeClassName="selected">Home</NavLink></li>

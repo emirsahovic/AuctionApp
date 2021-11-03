@@ -3,7 +3,7 @@
 .nav-upper{
     background-color: #252525;
     width: 100%;
-    height: 48px;
+    height: 51px;
 }
 
 .container-upper {
@@ -41,7 +41,7 @@
    color: #fff;
    text-decoration: none;
    display: block;
-   padding: 1rem 0.5rem;
+   padding: 1rem 0;
 }
 
 .login a:hover {
@@ -62,16 +62,16 @@
 /* --------------------------- Main White Nav --------------------------------- */
 
 .container-main-nav {
-  max-width: 1750px;
+  max-width: 75%;
   margin: auto;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between; /* Dodano zbog skrivenog search inputa  */
   align-items: center;
 }
 
 .container-main-nav img {
   margin-top: 15px;
-  margin-left: 80px;
+  /* margin-left: 80px */
 }
 
 .container-main-nav input {
@@ -99,13 +99,13 @@
   display: flex;
   align-items: center;
   margin-top: 22px;
-  margin-right: 3%;
+  /* margin-right: 3%; */
 }
 
 .selected {
   color: #8367d8;
   font-weight: bold;
-  padding-right: 30px;
+  padding-left: 30px;
   text-decoration: none;
   font-family: "Lato", sans-serif;
   font-size: 18px;
@@ -116,8 +116,8 @@
   color: #8367d8;
 }
 
-.container-main-nav a:not(.selected) {
-  padding-right: 30px;
+.container-main-nav a:not(.selected):not(.logo-link) {
+  padding-left: 30px;
   text-decoration: none;
   font-family: "Lato", sans-serif;
   font-size: 18px;
