@@ -18,30 +18,32 @@ const Breadcrumbs = () => {
 
 
   return (
-    <div className="breadcrumbs-container">
-      <div>
-        {pathnames.map((name, i) => <h5 key={i}>{pages[name]}</h5>)}
-      </div>
+    <div className="bg-cont">
+      <div className="breadcrumbs-container">
+        <div>
+          {pathnames.map((name, i) => <h5 key={i}>{pages[name]}</h5>)}
+        </div>
 
-      {
-        breadcrumbs.map(({
-          match,
-          breadcrumb
-        }) => (
-          <div key={match.url}>
-            <span>
-              {routes.find((route) => route.path === match.url) ?
-                (<><NavLink to={match.url.slice(0, match.url.lastIndexOf("/"))} className="breadcrumb-link">
-                  {match.url.slice(1, match.url.lastIndexOf("/")).charAt(0).toUpperCase() + match.url.slice(1, match.url.lastIndexOf("/")).slice(1)}
-                </NavLink>
-                  <span style={{ fontSize: "20px", color: "#9b9b9b" }}> &#8594;
-                    <span> {breadcrumb} </span>
-                  </span></>) : null}
-            </span>
-          </div>
-        ))
-      }
-    </div >
+        {
+          breadcrumbs.map(({
+            match,
+            breadcrumb
+          }) => (
+            <div key={match.url}>
+              <span>
+                {routes.find((route) => route.path === match.url) ?
+                  (<><NavLink to={match.url.slice(0, match.url.lastIndexOf("/"))} className="breadcrumb-link">
+                    {match.url.slice(1, match.url.lastIndexOf("/")).charAt(0).toUpperCase() + match.url.slice(1, match.url.lastIndexOf("/")).slice(1)}
+                  </NavLink>
+                    <span style={{ fontSize: "20px", color: "#9b9b9b" }}> &#8594;
+                      <span> {breadcrumb} </span>
+                    </span></>) : null}
+              </span>
+            </div>
+          ))
+        }
+      </div >
+    </div>
   );
 };
 
