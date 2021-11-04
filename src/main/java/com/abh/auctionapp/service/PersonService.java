@@ -3,6 +3,7 @@ package com.abh.auctionapp.service;
 import com.abh.auctionapp.model.Person;
 import com.abh.auctionapp.repository.PersonRepository;
 import com.abh.auctionapp.request.RegisterRequest;
+import com.abh.auctionapp.request.LoginRequest;
 
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,18 @@ public class PersonService {
                 registerRequest.getEmail(),
                 passwordEncoder.encode(registerRequest.getPassword()))
         );
+        person.setPassword(null);
+        return person;
+    }
+
+    public Person login(LoginRequest loginRequest) {
+        Person person = personRepository.findByEmail(loginRequest.getEmail());
+        if (person == null || !passwordEncoder.matches(loginRequest.getPassword(), person.getPassword()))
+            try {
+                throw new Exception("The email address or password you entered is not valid");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         person.setPassword(null);
         return person;
     }
