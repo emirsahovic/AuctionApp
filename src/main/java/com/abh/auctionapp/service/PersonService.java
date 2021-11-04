@@ -23,11 +23,7 @@ public class PersonService {
 
     public Person register(RegisterRequest registerRequest){
         if (personRepository.existsByEmail(registerRequest.getEmail())) {
-            try {
-                throw new Exception("Email is already in use");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+                throw new RuntimeException("Email is already in use");
         }
         Person person = personRepository.save(new Person(
                 registerRequest.getFirstName(),
@@ -41,12 +37,9 @@ public class PersonService {
 
     public Person login(LoginRequest loginRequest) {
         Person person = personRepository.findByEmail(loginRequest.getEmail());
-        if (person == null || !passwordEncoder.matches(loginRequest.getPassword(), person.getPassword()))
-            try {
-                throw new Exception("The email address or password you entered is not valid");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        if (person == null || !passwordEncoder.matches(loginRequest.getPassword(), person.getPassword())) {
+            throw new RuntimeException("The email address or password you entered is not valid");
+        }
         person.setPassword(null);
         return person;
     }
