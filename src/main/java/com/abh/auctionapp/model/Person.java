@@ -37,7 +37,7 @@ public class Person {
 
     @NotBlank
     @Column(nullable = false)
-    @Size(max = 30)
+    @Size(max = 255)
     private String password;
 
     @Enumerated(EnumType.STRING)
@@ -57,10 +57,7 @@ public class Person {
     public Person() {
     }
 
-    public Person(@NotBlank @Size(min = 2, max = 30) String firstName,
-                  @NotBlank @Size(min = 2, max = 30) String lastName,
-                  @NotBlank @Size(max = 50) @Email String email,
-                  @NotBlank @Size(max = 30) String password) {
+    public Person(String firstName, String lastName, String email, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
