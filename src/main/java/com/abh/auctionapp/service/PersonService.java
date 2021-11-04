@@ -28,16 +28,13 @@ public class PersonService {
                 e.printStackTrace();
             }
         }
-
         Person person = personRepository.save(new Person(
                 registerRequest.getFirstName(),
                 registerRequest.getLastName(),
                 registerRequest.getEmail(),
                 passwordEncoder.encode(registerRequest.getPassword()))
         );
-
-    person.setPassword(null);
-    return person;
-
+        person.setPassword(null);
+        return person;
     }
 }
