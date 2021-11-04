@@ -12,4 +12,12 @@ public class LoginResponse {
         this.person = person;
         this.token = token;
     }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public String getToken() {
+        return token;
+    }
 }
