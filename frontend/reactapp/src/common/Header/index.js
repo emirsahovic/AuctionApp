@@ -3,8 +3,22 @@ import { SiFacebook, SiTwitter, SiInstagram } from 'react-icons/si';
 import { FaGooglePlus } from 'react-icons/fa';
 import logo from "../../images/auction-app-logo.png"
 import { Link, NavLink } from 'react-router-dom'
+import { useEffect, useState } from 'react';
+import { getToken, removeSession } from "../../utilities/Auth";
 
-function NavBar() {
+function NavBar({ loggedInState }) {
+  const [loggedIn, setLoggedIn] = useState(getToken() !== null);
+
+  useEffect(() => {
+    if (loggedInState !== null)
+      setLoggedIn(!loggedIn);
+  }, [loggedInState]);
+
+  const handleLogout = () => {
+    setLoggedIn(false);
+    removeSession();
+  };
+
   return (
     <>
       <div className="nav-upper">
@@ -26,9 +40,16 @@ function NavBar() {
           </div>
 
           <div className="login">
-            <a href="#login">Login</a>
-            <p>or</p>
-            <a href="#account">Create an Account</a>
+            <>
+              {loggedIn ? (<Link onClick={handleLogout} to="/">Log out </Link>) :
+                (
+                  <>
+                    <Link to="/login">Login</Link>
+                    <p> or </p>
+                    <Link to="/register">Create an Account</Link>
+                  </>
+                )}
+            </>
           </div>
 
         </div>
