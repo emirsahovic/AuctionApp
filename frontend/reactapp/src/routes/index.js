@@ -3,6 +3,7 @@ import About from "../pages/About/index";
 import TermsConditions from "../pages/TermsConditions/index";
 import PrivacyPolicy from "../pages/PrivacyPolicy/index";
 import Register from "../pages/Register/index"
+import Login from '../pages/Login';
 
 function Routes(props) {
     return (
@@ -11,6 +12,7 @@ function Routes(props) {
             <Route exact path="/shop/privacy" component={PrivacyPolicy} />
             <Route exact path="/shop/terms" component={TermsConditions} />
             <Route path="/register" render={() => <Register {...props} />} />
+            <Route path="/login" render={() => <Login {...props} />} />
         </Switch>
     );
 }
