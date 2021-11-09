@@ -20,7 +20,7 @@ function App() {
     setAlertVisibility(true);
     setTimeout(() => {
       setAlertVisibility(false)
-    }, 4500);
+    }, 4000);
   }
 
   const changeLoggedInState = () => {
@@ -36,9 +36,9 @@ function App() {
       <Router>
         <NavBar loggedInState={loggedInState} />
         <Breadcrumb />
-        <Alert show={alertVisibility} variant={type}>
-          {message}
-        </Alert>
+        <div className="alert-container">
+          <Alert show={alertVisibility} variant={type}>{message}</Alert>
+        </div>
         <Routes changeLoggedInState={changeLoggedInState} showMessage={showMessage} />
         <Footer />
       </Router >
