@@ -31,7 +31,7 @@ public class Person {
 
     @NotBlank
     @Column(nullable = false, unique = true)
-    @Size(max = 50)
+    @Size(max = 255)
     @Email
     private String email;
 

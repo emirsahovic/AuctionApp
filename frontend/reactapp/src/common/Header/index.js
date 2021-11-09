@@ -3,8 +3,27 @@ import { SiFacebook, SiTwitter, SiInstagram } from 'react-icons/si';
 import { FaGooglePlus } from 'react-icons/fa';
 import logo from "../../images/auction-app-logo.png"
 import { Link, NavLink } from 'react-router-dom'
+import { useEffect, useState } from 'react';
+import { getToken, removeSession } from "../../utilities/Auth";
+import { useLocation } from 'react-router';
 
-function NavBar() {
+function NavBar({ loggedInState }) {
+  const [loggedIn, setLoggedIn] = useState(getToken() !== null);
+  const location = useLocation();
+  const { pathname } = location;
+  const routes = ["/", "/register", "/login"];
+
+  useEffect(() => {
+    if (loggedInState !== null)
+      setLoggedIn(!loggedIn);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loggedInState]);
+
+  const handleLogout = () => {
+    setLoggedIn(false);
+    removeSession();
+  };
+
   return (
     <>
       <div className="nav-upper">
@@ -26,9 +45,16 @@ function NavBar() {
           </div>
 
           <div className="login">
-            <a href="#login">Login</a>
-            <p>or</p>
-            <a href="#account">Create an Account</a>
+            <>
+              {loggedIn ? (<Link onClick={handleLogout} to="/">Log out </Link>) :
+                (
+                  <>
+                    <Link to="/login">Login</Link>
+                    <p> or </p>
+                    <Link to="/register">Create an Account</Link>
+                  </>
+                )}
+            </>
           </div>
 
         </div>
@@ -39,7 +65,7 @@ function NavBar() {
         <Link to="/" className="logo-link"><img src={logo} alt="logo"></img></Link>
         <input type="text" placeholder="Try enter: Shoes"></input>
         <ul>
-          <li><NavLink to="/" exact activeClassName="selected">Home</NavLink></li>
+          <li><NavLink to="/" activeClassName={routes.find((route) => route === pathname) ? "selected" : ""}>Home</NavLink></li>
           <li><NavLink to="/shop" activeClassName="selected">Shop</NavLink></li>
           <li><NavLink to="/account" activeClassName="selected">My Account</NavLink></li>
         </ul>
