@@ -25,7 +25,7 @@ const Register = ({ changeLoggedInState, showMessage }) => {
             .required("*Last name is required"),
         email: yup.string()
             .email("*Email must be valid")
-            .max(150, "*Email must be less than 150 characters")
+            .max(255, "*Email must be less than 255 characters")
             .required("*Email is required"),
         password: yup.string()
             .matches(
@@ -60,9 +60,7 @@ const Register = ({ changeLoggedInState, showMessage }) => {
             </div>
 
             <div className="register-container">
-                <div className="register-title">
-                    Register
-                </div>
+                <div className="register-title">Register</div>
                 <Formik
                     validationSchema={validationSchema}
                     initialValues={{ firstName: "", lastName: "", email: "", password: "" }}
