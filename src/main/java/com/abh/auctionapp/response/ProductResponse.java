@@ -68,11 +68,11 @@ public class ProductResponse {
         this.wished = wished;
     }
 
-    public List<Picture> getImages() {
+    public List<Picture> getPictures() {
         return pictures;
     }
 
-    public void setImages(List<Picture> pictures) {
+    public void setPictures(List<Picture> pictures) {
         this.pictures = pictures;
     }
 }

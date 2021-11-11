@@ -37,7 +37,7 @@ public class ProductService {
 
         if (fullProducts.get(0).getPictureId() != null) {
             for (var fullProductResponse : fullProducts) {
-                productResponse.getImages().add(new Picture(
+                productResponse.getPictures().add(new Picture(
                     fullProductResponse.getPictureId(),
                     fullProductResponse.getPictureUrl(),
                     fullProductResponse.getPictureFeatured()
