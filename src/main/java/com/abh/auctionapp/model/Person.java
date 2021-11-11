@@ -54,6 +54,8 @@ public class Person {
     @Size(max = 15)
     private String zipCode;
 
+    private String pictureUrl;
+
     public Person() {
     }
 
