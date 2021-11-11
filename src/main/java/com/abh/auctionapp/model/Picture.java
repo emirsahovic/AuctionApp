@@ -1,12 +1,6 @@
 package com.abh.auctionapp.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
@@ -20,11 +14,21 @@ public class Picture {
     @Column(nullable = false)
     private String url;
 
+    @NotBlank
+    @Column(nullable = false)
+    private Boolean featured = false;
+
     @ManyToOne
     @JoinColumn(name = "product_id", nullable = false)
     private Product product;
 
     public Picture() {
+    }
+
+    public Picture(Long id, @NotBlank String url, @NotBlank Boolean featured) {
+        this.id = id;
+        this.url = url;
+        this.featured = featured;
     }
 
     public Picture(@NotBlank String url, Product product) {
@@ -48,11 +52,7 @@ public class Picture {
         this.url = url;
     }
 
-    public Product getProduct() {
-        return product;
-    }
+    public Boolean getFeatured() { return featured; }
 
-    public void setProduct(Product product) {
-        this.product = product;
-    }
+    public void setFeatured(Boolean featured) { this.featured = featured; }
 }

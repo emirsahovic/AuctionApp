@@ -34,6 +34,12 @@ public class Product {
     @Column(nullable = false)
     private Float startPrice;
 
+    @Column(nullable = false)
+    private LocalDateTime startDate;
+
+    @Column(nullable = false)
+    private LocalDateTime endDate;
+
     @javax.validation.constraints.Size(max = 25)
     private String color;
 
@@ -45,22 +51,28 @@ public class Product {
     @Value("false")
     private Boolean shippingCost;
 
+    @NotBlank
     @Column(nullable = false)
-    private LocalDateTime startDate;
-
-    @Column(nullable = false)
-    private LocalDateTime endDate;
-
-    private String city;
     private String country;
-    private String state;
+
+    @NotBlank
+    @Column(nullable = false)
+    private String city;
+
+    @NotBlank
+    @Column(nullable = false)
     private String street;
 
+    @NotBlank
     @javax.validation.constraints.Size(max = 15)
+    @Column(nullable = false)
     private String zipCode;
 
     @javax.validation.constraints.Size(max = 15)
     private String phoneNumber;
+
+    @Column(nullable = false)
+    private Boolean featured = false;
 
     @ManyToOne
     @JoinColumn(name = "person_id", nullable = false)
@@ -73,13 +85,18 @@ public class Product {
     public Product() {
     }
 
-    public Product(@NotBlank @javax.validation.constraints.Size(max = 100) String name,
-                   @PositiveOrZero Float startPrice, LocalDateTime startDate, LocalDateTime endDate,
-                   Person person, Subcategory subcategory) {
+    public Product(@NotBlank String name, @PositiveOrZero Float startPrice, LocalDateTime startDate,
+                   LocalDateTime endDate, @NotBlank String country, @NotBlank String city, @NotBlank String street,
+                   @NotBlank String zipCode, @NotBlank String phoneNumber, Person person, Subcategory subcategory) {
         this.name = name;
         this.startPrice = startPrice;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.country = country;
+        this.city = city;
+        this.street = street;
+        this.zipCode = zipCode;
+        this.phoneNumber = phoneNumber;
         this.person = person;
         this.subcategory = subcategory;
     }
@@ -168,14 +185,6 @@ public class Product {
 
     public void setCountry(String country) {
         this.country = country;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
     }
 
     public String getStreet() {
