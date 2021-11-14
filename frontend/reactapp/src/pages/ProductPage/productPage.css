@@ -1,0 +1,145 @@
+.product-container {
+    display: flex;
+    margin: auto;
+    margin-top: 4%;
+    max-width: 75%;
+}
+
+.images-container {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.big-img-container{
+    object-fit: contain;
+}
+
+.small-img-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 100px;
+    flex-wrap: nowrap;
+}
+
+.small-img-container img:hover {
+   border: 2px solid #8367d8;
+}
+
+.product-info-container {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-left: 15%;
+}
+
+.bid-container {
+    border: 1px solid #ccc;
+    padding: 1rem 2rem;
+    width: 250px;
+    line-height: 2;
+    margin-bottom: 50px;
+}
+
+.bid-input-button {
+    display: flex;
+}
+
+.bid-input-button input {
+    margin-right: 50px;
+    width: 35%;
+    height: 50px;
+}
+
+.bid-input-button button {
+    background-color: transparent;
+    color: #000;
+    border: 2px solid #8367d8;
+    padding: 0 1.2rem 0;
+    text-transform: uppercase;
+}
+
+.bid-input-button button:hover {
+    background-color: transparent;
+    color: #000;
+    border: 2px solid #8367d8;
+}
+
+.purple-text {
+    font-size: 16px;
+    color: #8367d8;
+}
+
+.info-container .info-title {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.info-container .info-title > p {
+    cursor: pointer;
+}
+
+.info-container .info-title > p:hover {
+    opacity: 0.85;
+}
+
+.lines {
+    display: flex;
+}
+
+.purple-line, .gray-line {
+    height: 0.1rem;
+    margin-bottom: 20px;    
+}
+
+.gray-line {
+    background-color: #d8d8d8;
+    width: 85%;
+}
+
+.purple-line {
+    background-color: #8367d8;
+    width: 15%;
+}
+
+.detail-title {
+    font-weight: 700;
+}
+
+.related-products-container {
+    max-width: 75%;
+    margin: auto;
+    margin-bottom: 11rem;
+}
+
+.related-products-title {
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.related-products-line {
+    background-color: #d8d8d8;
+    width: 100%;
+    height: 0.1rem;
+}
+
+.related-products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    grid-gap: 1.4rem;
+    margin-top: 2rem;
+}
+
+.related-products-item-title {
+    text-align: left;
+    margin-top: 1rem;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
