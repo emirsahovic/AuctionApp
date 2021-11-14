@@ -24,9 +24,9 @@ const removeRememberUser = () => {
     localStorage.removeItem('password');
 }
 
-const getUser = () => {
+const getUserId = () => {
     const user = localStorage.getItem('user');
-    return user ? JSON.parse(user) : null;
+    return user ? JSON.parse(user).id : null;
 };
 
 const getToken = () => {
@@ -39,6 +39,6 @@ export {
     setRememberUser,
     getRememberUser,
     removeRememberUser,
-    getUser,
+    getUserId,
     getToken
 }
