@@ -19,9 +19,9 @@ public class ProductControllerTest {
     private MockMvc mock;
 
     @Test
-    public void getFirstProduct() throws Exception {
+    public void getSecondProduct() throws Exception {
         RequestBuilder request = MockMvcRequestBuilders
-                .get("/products/?product_id=1&user_id=5")
+                .get("/products/?product_id=2&user_id=3")
                 .accept(MediaType.APPLICATION_JSON);
         mock.perform(request)
                 .andExpect(status().isOk());
