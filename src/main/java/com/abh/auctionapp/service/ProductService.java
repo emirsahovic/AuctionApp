@@ -39,8 +39,7 @@ public class ProductService {
             for (var fullProductResponse : fullProducts) {
                 productResponse.getPictures().add(new Picture(
                     fullProductResponse.getPictureId(),
-                    fullProductResponse.getPictureUrl(),
-                    fullProductResponse.getPictureFeatured()
+                    fullProductResponse.getPictureUrl()
                 ));
             }
         }

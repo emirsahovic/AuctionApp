@@ -25,10 +25,9 @@ public class Picture {
     public Picture() {
     }
 
-    public Picture(Long id, @NotBlank String url, @NotBlank Boolean featured) {
+    public Picture(Long id, @NotBlank String url) {
         this.id = id;
         this.url = url;
-        this.featured = featured;
     }
 
     public Picture(@NotBlank String url, Product product) {
