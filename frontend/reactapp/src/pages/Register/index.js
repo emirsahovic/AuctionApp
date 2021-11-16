@@ -3,13 +3,17 @@ import { Button, Form } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 import { setSession } from '../../utilities/Auth';
 import { registerUser } from '../../utilities/Request';
-import { useState } from 'react';
-import { useLocation } from 'react-router';
+import { useState, useEffect } from 'react';
+import { useBreadcrumbContext } from '../../BreadcrumbContext'
 import * as yup from 'yup';
 
 import './register.css';
 
 const Register = ({ changeLoggedInState, showMessage }) => {
+
+    const { setBreadcrumb } = useBreadcrumbContext();
+
+    useEffect(() => { setBreadcrumb("Register", []); }, []);
 
     const history = useHistory();
     const [existingEmail, setExistingEmail] = useState(false);
@@ -50,15 +54,8 @@ const Register = ({ changeLoggedInState, showMessage }) => {
         }
     }
 
-    const location = useLocation();
-    const { pathname } = location;
-
     return (
         <>
-            <div className="page-title">
-                {pathname.charAt(pathname.lastIndexOf("/") + 1).toUpperCase() + pathname.slice(pathname.lastIndexOf("/") + 2)}
-            </div>
-
             <div className="register-container">
                 <div className="register-title">Register</div>
                 <Formik

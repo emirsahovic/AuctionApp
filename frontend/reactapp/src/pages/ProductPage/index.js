@@ -1,15 +1,17 @@
 import { useEffect, useState } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { getProduct } from '../../utilities/Request';
-import { Button, Form, Image, Nav } from 'react-bootstrap';
+import { Button, Form, Image } from 'react-bootstrap';
 import { IoIosArrowForward } from "react-icons/io";
 import { getToken } from '../../utilities/Auth';
+import { useBreadcrumbContext } from '../../BreadcrumbContext'
 import moment from 'moment';
 
 import './productPage.css';
 
 const ProductPage = ({ match, loggedInState }) => {
 
+    const { setBreadcrumb } = useBreadcrumbContext();
     const [product, setProduct] = useState(null);
     const [loggedIn, setLoggedIn] = useState(getToken() !== null);
 
@@ -23,6 +25,8 @@ const ProductPage = ({ match, loggedInState }) => {
         const fetchData = async () => {
             const productId = match.params.id;
             setProduct(await getProduct(productId, 0));
+            const data = await getProduct(productId, 0);
+            setBreadcrumb(data.name, [{ text: "Shop", href: "/shop" }, { text: "Single Product" }]);
         }
         fetchData();
         // eslint-disable-next-line
@@ -32,16 +36,6 @@ const ProductPage = ({ match, loggedInState }) => {
         <>
             {product !== null ? (
                 <>
-                    <div className="bg-container">
-                        <div className="breadcrumbs-container breadcrumb-single-product" style={{ paddingTop: '15px' }}>
-                            <p>{product.name}</p>
-                            <div>
-                                <NavLink to="/shop">Shop </NavLink> <span style={{ fontSize: "20px", color: "#9b9b9b" }}> &#8594; </span>
-                                <span>Single Product</span>
-                            </div>
-                        </div>
-                    </div>
-
                     <div className="product-container">
                         <div className="images-container">
                             <Image className="big-img-container" key={product.pictures[0].id} height="450px" width="100%"
@@ -100,7 +94,11 @@ const ProductPage = ({ match, loggedInState }) => {
                                 {loggedIn ? <Button>
                                     Place bid
                                     <IoIosArrowForward style={{ fontSize: 22, marginLeft: '10px', marginBottom: '3px' }} />
-                                </Button> : null}
+                                </Button> :
+                                    < Button disabled={true}>
+                                        Place bid
+                                        <IoIosArrowForward style={{ fontSize: 22, marginLeft: '10px', marginBottom: '3px' }} />
+                                    </Button>}
                             </div>
                             <div>
                                 <div className="info-container" style={{ marginTop: '15px' }}>
@@ -120,7 +118,8 @@ const ProductPage = ({ match, loggedInState }) => {
 
                 </>
 
-            ) : null}
+            ) : null
+            }
 
         </>
     );

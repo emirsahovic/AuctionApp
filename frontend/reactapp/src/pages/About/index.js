@@ -2,9 +2,15 @@ import './about.css';
 import person1 from '../../images/Rectangle 63.png';
 import person2 from '../../images/Rectangle 64.png';
 import person3 from '../../images/Rectangle 65.png';
-
+import { useEffect } from 'react';
+import { useBreadcrumbContext } from '../../BreadcrumbContext';
 
 function About() {
+    const { setBreadcrumb } = useBreadcrumbContext();
+    useEffect(() => {
+        setBreadcrumb("About Us", [{ text: "Shop", href: "/shop" }, { text: "About Us" }]);
+    }, [])
+
     return (
         <div className="about-wrapper">
             <h1>About Us</h1>

@@ -1,7 +1,7 @@
 import NavBar from './common/Header/index';
 import Footer from './common/Footer/index'
 import Routes from './routes/index'
-import Breadcrumb from './common/Breadcrumb/index';
+import Breadcrumbs from './common/Breadcrumb/index';
 import { useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Alert } from 'react-bootstrap';
@@ -35,11 +35,13 @@ function App() {
     <div>
       <Router>
         <NavBar loggedInState={loggedInState} />
-        <Breadcrumb />
+        <Breadcrumbs />
         <div className="alert-container">
           <Alert show={alertVisibility} variant={type}>{message}</Alert>
         </div>
-        <Routes changeLoggedInState={changeLoggedInState} showMessage={showMessage} />
+        <div>
+          <Routes changeLoggedInState={changeLoggedInState} showMessage={showMessage} />
+        </div>
         <Footer />
       </Router >
     </div >

@@ -1,15 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Formik } from 'formik';
 import { Button, Form } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import { loginUser } from '../../utilities/Request';
 import { setSession, setRememberUser, getRememberUser, removeRememberUser } from '../../utilities/Auth';
-import { useLocation } from 'react-router';
+import { useBreadcrumbContext } from '../../BreadcrumbContext'
 import * as yup from 'yup';
 
 import './login.css';
 
 const Login = ({ changeLoggedInState, showMessage }) => {
+
+    const { setBreadcrumb } = useBreadcrumbContext();
+
+    useEffect(() => { setBreadcrumb("Login", []); }, []);
 
     const history = useHistory();
     const rememberUser = getRememberUser();
@@ -42,15 +46,8 @@ const Login = ({ changeLoggedInState, showMessage }) => {
         remember: yup.bool()
     });
 
-    const location = useLocation();
-    const { pathname } = location;
-
     return (
         <>
-            <div className="page-title">
-                {pathname.charAt(pathname.lastIndexOf("/") + 1).toUpperCase() + pathname.slice(pathname.lastIndexOf("/") + 2)}
-            </div>
-
             <div className="login-container">
                 <div className="login-title">Login</div>
                 <Formik

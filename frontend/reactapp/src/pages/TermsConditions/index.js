@@ -1,6 +1,13 @@
 import './termsConditions.css';
+import { useEffect } from 'react';
+import { useBreadcrumbContext } from '../../BreadcrumbContext';
 
 function TermsConditions() {
+    const { setBreadcrumb } = useBreadcrumbContext();
+    useEffect(() => {
+        setBreadcrumb("Terms and conditions", [{ text: "Shop", href: "/shop" }, { text: "Terms and conditions" }]);
+    }, [])
+
     return (
         <div className="terms-cont">
             <h1>Introduction</h1>
