@@ -14,10 +14,6 @@ public class Picture {
     @Column(nullable = false)
     private String url;
 
-    @NotBlank
-    @Column(nullable = false)
-    private Boolean featured = false;
-
     @ManyToOne
     @JoinColumn(name = "product_id", nullable = false)
     private Product product;
@@ -50,8 +46,4 @@ public class Picture {
     public void setUrl(String url) {
         this.url = url;
     }
-
-    public Boolean getFeatured() { return featured; }
-
-    public void setFeatured(Boolean featured) { this.featured = featured; }
 }

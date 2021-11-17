@@ -13,10 +13,9 @@ import java.util.List;
 public interface ProductRepository extends JpaRepository<Product, Long> {
      @Query(value = "SELECT p.id, p.name, p.description, p.start_price startPrice, p.end_date endDate, " +
                     "EXISTS(SELECT * FROM wishlist " +
-                    "WHERE product_id = :product_id AND person_id = :user_id) wished, pic.id pictureId, pic.url pictureUrl, pic.featured pictureFeatured " +
+                    "WHERE product_id = :product_id AND person_id = :user_id) wished, pic.id pictureId, pic.url pictureUrl " +
                     "FROM product p LEFT JOIN picture pic on p.id = pic.product_id " +
-                    "WHERE p.id = :product_id " +
-                    "ORDER BY pic.featured DESC",
+                    "WHERE p.id = :product_id ",
                     nativeQuery = true)
      List<FullProductResponse> getProduct(@Param("product_id") Long productId, @Param("user_id") Long userId);
 }
