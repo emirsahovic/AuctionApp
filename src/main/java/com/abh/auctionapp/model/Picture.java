@@ -1,12 +1,6 @@
 package com.abh.auctionapp.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
@@ -25,6 +19,11 @@ public class Picture {
     private Product product;
 
     public Picture() {
+    }
+
+    public Picture(Long id, @NotBlank String url) {
+        this.id = id;
+        this.url = url;
     }
 
     public Picture(@NotBlank String url, Product product) {
@@ -46,13 +45,5 @@ public class Picture {
 
     public void setUrl(String url) {
         this.url = url;
-    }
-
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
     }
 }
