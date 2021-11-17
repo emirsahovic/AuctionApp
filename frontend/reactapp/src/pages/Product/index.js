@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { NavLink, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { getProduct } from '../../utilities/Request';
 import { Button, Form, Image } from 'react-bootstrap';
 import { IoIosArrowForward } from "react-icons/io";
@@ -7,13 +7,14 @@ import { getToken } from '../../utilities/Auth';
 import { useBreadcrumbContext } from '../../BreadcrumbContext'
 import moment from 'moment';
 
-import './productPage.css';
+import './product.css';
 
 const ProductPage = ({ match, loggedInState }) => {
 
     const { setBreadcrumb } = useBreadcrumbContext();
     const [product, setProduct] = useState(null);
     const [loggedIn, setLoggedIn] = useState(getToken() !== null);
+    const [activePhoto, setActivePhoto] = useState(0);
 
     useEffect(() => {
         if (loggedInState !== null)
@@ -38,38 +39,19 @@ const ProductPage = ({ match, loggedInState }) => {
                 <>
                     <div className="product-container">
                         <div className="images-container">
-                            <Image className="big-img-container" key={product.pictures[0].id} height="450px" width="100%"
-                                src={product.pictures[0].url} />
+                            <Image className="big-img-container" key={product.pictures.id} height="450px" width="100%"
+                                src={product.pictures[activePhoto].url} />
                             <div className="small-img-container">
-                                {product.pictures.map((picture, i) => (
-                                    <div className="flex-images" key={i}>
-                                        <Image
+                                <div className="flex-images" >
+                                    {product.pictures.map((picture, i) => (
+                                        <Image key={i}
+                                            onClick={() => setActivePhoto(i)}
                                             width="100px"
                                             height="97px"
                                             src={picture.url}
                                         />
-                                        <Image
-                                            width="100px"
-                                            height="97px"
-                                            src={picture.url}
-                                        />
-                                        <Image
-                                            width="100px"
-                                            height="97px"
-                                            src={picture.url}
-                                        />
-                                        <Image
-                                            width="100px"
-                                            height="97px"
-                                            src={picture.url}
-                                        />
-                                        <Image
-                                            width="100px"
-                                            height="97px"
-                                            src={picture.url}
-                                        />
-                                    </div>
-                                ))}
+                                    ))}
+                                </div>
                             </div>
                         </div>
 
