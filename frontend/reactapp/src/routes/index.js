@@ -4,7 +4,7 @@ import TermsConditions from "../pages/TermsConditions/index";
 import PrivacyPolicy from "../pages/PrivacyPolicy/index";
 import Register from "../pages/Register/index"
 import Login from '../pages/Login';
-import ProductPage from '../pages/ProductPage';
+import ProductPage from '../pages/Product';
 
 function Routes(props) {
     return (
