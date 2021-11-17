@@ -17,7 +17,7 @@ const Breadcrumbs = () => {
           <Breadcrumb.Item active key={item.text}>
             {length - 1 === i ? (
               <div className="purple-text-br">
-                {item.text}
+                <span style={{ marginRight: '5px' }}>&#8594;</span> {item.text}
               </div>
             ) : (
               <Link to={item.href}>
